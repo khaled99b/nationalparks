@@ -75,8 +75,8 @@ public class ParksResource {
 		BasicDBObject spatialQuery = new BasicDBObject();
 
 		ArrayList<double[]> boxList = new ArrayList<double[]>();
-		boxList.add(new double[] { new Float(lon2), new Float(lat2) });
-		boxList.add(new double[] { new Float(lon1), new Float(lat1) });
+		boxList.add(new double[] { new Float(lat2), new Float(lon2) });
+		boxList.add(new double[] { new Float(lat1), new Float(lon1) });
 
 		BasicDBObject boxQuery = new BasicDBObject();
 		boxQuery.put("$box", boxList);
@@ -92,6 +92,7 @@ public class ParksResource {
 		} finally {
 			cursor.close();
 		}
+		System.out.println("Return " + allParksList.size() + " parks");
 
 		return allParksList;
 	}

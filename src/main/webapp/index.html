@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>GM Dealerships</title>
+	<title>National Parks</title>
 	<link rel="stylesheet" href="leaflet/leaflet.css" />
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="leaflet/markercluster/MarkerCluster.css" />
@@ -31,11 +31,11 @@
 	</style>
 </head>
 <body>
-<h1 id="title">GM Dealerships</h1>
+<h1 id="title">National Parks</h1>
 <div id="map"></div>
 <script>
 
-	center = new L.LatLng(39.82, -98.57);
+	center = new L.LatLng(47.039304, 14.505178);
 	zoom = 5;
 	var map = L.map('map').setView(center, zoom);
 	//var markerLayerGroup = L.layerGroup().addTo(map);
@@ -62,12 +62,10 @@
 		//add the new pins
 		var markerArray = new Array(data.length);
 		for (var i = 0; i < data.length; i++){
-			dealership = data[i];
-			console.log(data[i]);
-			var popupInformation = "<b>" + dealership.name + "</b></br>";
-			//var marker = L.marker([dataPoint.latitude, dataPoint.longitude]);
-//				markerArray[i] = L.marker([dealership.position[1], dealership.position[0]]).bindPopup(popupInformation);
-			var marker = L.marker([dealership.latitude, dealership.longitude]);
+			park = data[i];
+			// console.log(data[i]);
+			var popupInformation = "<b>" + park.name + "</b></br>";
+			var marker = L.marker([park.latitude, park.longitude]);
 			marker.bindPopup(popupInformation);
 			markers.addLayer(marker);
 		}
