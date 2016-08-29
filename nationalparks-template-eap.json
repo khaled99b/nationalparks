@@ -314,12 +314,12 @@
                         "image": "${APPLICATION_NAME}",
                         "ports": [
                            {
-                              "name": "${APPLICATION_NAME}-http",
+                              "name": "http",
                               "containerPort": 8080,
                               "protocol": "TCP"
                            },
                            {
-                              "name": "${APPLICATION_NAME}-ping",
+                              "name": "ping",
                               "containerPort": 8888,
                               "protocol": "TCP"
                            }
@@ -435,7 +435,7 @@
          "kind": "Service",
          "apiVersion": "v1",
          "metadata": {
-            "name": "${APPLICATION_NAME}-ping",
+            "name": "ping",
             "annotations": {
                "description": "Ping service for clustered applications"
             }

@@ -314,7 +314,7 @@
                         "image": "${APPLICATION_NAME}",
                         "ports": [
                            {
-                              "name": "${APPLICATION_NAME}-http",
+                              "name": "http",
                               "containerPort": 8080,
                               "protocol": "TCP"
                            }
