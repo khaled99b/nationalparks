@@ -67,7 +67,7 @@ public class DBConnection {
 
 	private void initDatabase(MongoDatabase mongoDB) {
 		MongoCollection parkListCollection = getCollection();
-		int teamsImported = 0;
+		int imported = 0;
 		if (parkListCollection.count() < 1) {
 			System.out.println("The database is empty.  We need to populate it");
 			try {
@@ -76,9 +76,9 @@ public class DBConnection {
 				BufferedReader in = new BufferedReader(new InputStreamReader(is));
 				while ((currentLine = in.readLine()) != null) {
 					parkListCollection.insertOne(Document.parse(currentLine.toString()));
-					teamsImported++;
+					imported++;
 				}
-				System.out.println("Successfully imported " + teamsImported + " teams.");
+				System.out.println("Successfully imported " + imported + " elements.");
 
 			} catch (Exception e) {
 				e.printStackTrace();
